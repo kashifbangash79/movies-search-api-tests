@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.10.11 on win32)" generated="2024-01-19T17:09:17.168895" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="C:\Users\kashi\Desktop\Assignment#1 Auto test\tests.robot">
+<test id="s1-t1" name="Open Movie Search App" line="10">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-01-19T17:09:17.388751" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3001'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-01-19T17:09:17.387664" elapsed="2.613289"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-01-19T17:09:20.018641" level="INFO">Current page contains element '//h1[contains(text(), "Movie Search")]'.</msg>
+<arg>//h1[contains(text(), "Movie Search")]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-01-19T17:09:20.002221" elapsed="0.016420"/>
+</kw>
+<status status="PASS" start="2024-01-19T17:09:17.386692" elapsed="2.631949"/>
+</test>
+<test id="s1-t2" name="Search For Movie - Valid Search Term" line="14">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-01-19T17:09:20.018641" level="INFO">Typing text 'pi' into text field '//input[@placeholder='Enter movie title']'.</msg>
+<arg>//input[@placeholder='Enter movie title']</arg>
+<arg>pi</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-19T17:09:20.018641" elapsed="0.150952"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-01-19T17:09:20.169593" level="INFO">Clicking button '//button[contains(text(), 'Search')]'.</msg>
+<arg>//button[contains(text(), 'Search')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-19T17:09:20.169593" elapsed="0.132025"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-01-19T17:09:23.311274" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-01-19T17:09:20.301618" elapsed="3.009656"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-01-19T17:09:23.359202" level="INFO">Current page contains element '//div[@class='row']'.</msg>
+<arg>//div[@class='row']</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-01-19T17:09:23.311274" elapsed="0.047928"/>
+</kw>
+<status status="PASS" start="2024-01-19T17:09:20.018641" elapsed="3.340561"/>
+</test>
+<test id="s1-t3" name="Search For Movie - No Results" line="20">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-01-19T17:09:23.367670" level="INFO">Typing text 'NonExistentMovieTitle' into text field '//input[@placeholder='Enter movie title']'.</msg>
+<arg>//input[@placeholder='Enter movie title']</arg>
+<arg>NonExistentMovieTitle</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-19T17:09:23.367670" elapsed="0.215403"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-01-19T17:09:23.583073" level="INFO">Clicking button '//button[contains(text(), 'Search')]'.</msg>
+<arg>//button[contains(text(), 'Search')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-19T17:09:23.583073" elapsed="0.056190"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-01-19T17:09:26.653104" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-01-19T17:09:23.645726" elapsed="3.007378"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-01-19T17:09:26.735794" level="INFO">Current page contains text 'No movies found for the entered title.'.</msg>
+<arg>No movies found for the entered title.</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-01-19T17:09:26.653104" elapsed="0.082690"/>
+</kw>
+<status status="PASS" start="2024-01-19T17:09:23.366221" elapsed="3.370695"/>
+</test>
+<test id="s1-t4" name="Search For Movie - Empty Search" line="25">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-01-19T17:09:26.736916" level="INFO">Clicking button '//button[contains(text(), 'Search')]'.</msg>
+<arg>//button[contains(text(), 'Search')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-19T17:09:26.736916" elapsed="0.141869"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-01-19T17:09:26.921256" level="INFO">Current page contains text 'No movies found for the entered title.'.</msg>
+<arg>No movies found for the entered title.</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-01-19T17:09:26.880304" elapsed="0.040952"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-01-19T17:09:29.928303" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-01-19T17:09:26.921256" elapsed="3.007047"/>
+</kw>
+<status status="PASS" start="2024-01-19T17:09:26.736916" elapsed="3.191387"/>
+</test>
+<test id="s1-t5" name="Search For Movie - Search with Multiple Words" line="30">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-01-19T17:09:29.937677" level="INFO">Typing text 'Action Movies' into text field '//input[@placeholder='Enter movie title']'.</msg>
+<arg>//input[@placeholder='Enter movie title']</arg>
+<arg>Action Movies</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-19T17:09:29.937677" elapsed="0.193355"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-01-19T17:09:30.134129" level="INFO">Clicking button '//button[contains(text(), 'Search')]'.</msg>
+<arg>//button[contains(text(), 'Search')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-19T17:09:30.134129" elapsed="0.059497"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-01-19T17:09:33.196246" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-01-19T17:09:30.193626" elapsed="3.002620"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-01-19T17:09:33.230864" level="INFO">Current page contains element '//div[@class='row']'.</msg>
+<arg>//div[@class='row']</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-01-19T17:09:33.196246" elapsed="0.034618"/>
+</kw>
+<status status="PASS" start="2024-01-19T17:09:29.928303" elapsed="3.303651"/>
+</test>
+<test id="s1-t6" name="Search For Movie - Search with Special Characters" line="36">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-01-19T17:09:33.245015" level="INFO">Typing text '$pecial*Ch@racters' into text field '//input[@placeholder='Enter movie title']'.</msg>
+<arg>//input[@placeholder='Enter movie title']</arg>
+<arg>$pecial*Ch@racters</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-19T17:09:33.243980" elapsed="0.204559"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-01-19T17:09:33.451563" level="INFO">Clicking button '//button[contains(text(), 'Search')]'.</msg>
+<arg>//button[contains(text(), 'Search')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-19T17:09:33.451089" elapsed="0.082699"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-01-19T17:09:36.545780" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-01-19T17:09:33.536735" elapsed="3.009581"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-01-19T17:09:36.616602" level="INFO">Current page contains text 'No movies found for the entered title.'.</msg>
+<arg>No movies found for the entered title.</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-01-19T17:09:36.546316" elapsed="0.070286"/>
+</kw>
+<status status="PASS" start="2024-01-19T17:09:33.240317" elapsed="3.376285"/>
+</test>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2024-01-19T17:09:36.616602" elapsed="6.246583"/>
+</kw>
+<status status="PASS" start="2024-01-19T17:09:17.171228" elapsed="25.691957"/>
+</suite>
+<statistics>
+<total>
+<stat pass="6" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="6" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
